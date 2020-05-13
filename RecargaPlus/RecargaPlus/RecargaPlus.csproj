@@ -34,6 +34,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,35 +52,46 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\tools\objects\Recarga.cs" />
-    <Compile Include="src\views\frame\Colaboradores-frame.cs">
+    <Compile Include="views\frame\Bonificaciones_frame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="src\views\frame\Colaboradores-frame.Designer.cs">
+    <Compile Include="views\frame\Bonificaciones_frame.Designer.cs">
+      <DependentUpon>Bonificaciones_frame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frame\MontoCompania_frame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\frame\MontoCompania_frame.Designer.cs">
+      <DependentUpon>MontoCompania_frame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frame\Colaboradores-frame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="views\frame\Colaboradores-frame.Designer.cs">
       <DependentUpon>Colaboradores-frame.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\views\frame\Ganancias_frame.cs">
+    <Compile Include="views\frame\Ganancias_frame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="src\views\frame\Ganancias_frame.Designer.cs">
+    <Compile Include="views\frame\Ganancias_frame.Designer.cs">
       <DependentUpon>Ganancias_frame.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\views\frame\Recargas_frame.cs">
+    <Compile Include="views\frame\Recargas_frame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="src\views\frame\Recargas_frame.Designer.cs">
+    <Compile Include="views\frame\Recargas_frame.Designer.cs">
       <DependentUpon>Recargas_frame.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\views\pages\Inicio_page.cs">
+    <Compile Include="views\pages\Inicio_page.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\views\pages\Inicio_page.Designer.cs">
+    <Compile Include="views\pages\Inicio_page.Designer.cs">
       <DependentUpon>Inicio_page.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\views\pages\Login_page.cs">
+    <Compile Include="views\pages\Login_page.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\views\pages\Login_page.Designer.cs">
+    <Compile Include="views\pages\Login_page.Designer.cs">
       <DependentUpon>Login_page.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -88,22 +104,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\views\frame\Colaboradores-frame.resx">
+    <EmbeddedResource Include="views\frame\Bonificaciones_frame.resx">
+      <DependentUpon>Bonificaciones_frame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frame\MontoCompania_frame.resx">
+      <DependentUpon>MontoCompania_frame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frame\Colaboradores-frame.resx">
       <DependentUpon>Colaboradores-frame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\views\frame\Ganancias_frame.resx">
+    <EmbeddedResource Include="views\frame\Ganancias_frame.resx">
       <DependentUpon>Ganancias_frame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\views\frame\Recargas_frame.resx">
+    <EmbeddedResource Include="views\frame\Recargas_frame.resx">
       <DependentUpon>Recargas_frame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\views\pages\Inicio_page.resx">
+    <EmbeddedResource Include="views\pages\Inicio_page.resx">
       <DependentUpon>Inicio_page.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\views\pages\Login_page.resx">
+    <EmbeddedResource Include="views\pages\Login_page.resx">
       <DependentUpon>Login_page.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\RecargaPlus.src.tools.objects.Recarga.datasource" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,8 +140,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\database\" />
-    <Folder Include="src\views\options\" />
+    <Folder Include="views\options\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Agregar colaborador.png" />
@@ -153,6 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bonificaciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{0471db24-805d-451a-b42f-79a4216bc540}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

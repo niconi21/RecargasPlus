@@ -1,0 +1,387 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Services;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace WebServicesRecargaPlus
+{
+    /// <summary>
+    /// Summary description for Consultas
+    /// </summary>
+    [WebService(Namespace = "http://tempuri.org/webServiceRecargasPlus")]
+    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [System.ComponentModel.ToolboxItem(false)]
+    // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
+    // [System.Web.Script.Services.ScriptService]
+    public class Consultas : System.Web.Services.WebService
+    {
+        private String _stringConexion = "server=192.168.1.72; database=RecargaPlus ; user id=TAP ; pwd=12345";
+
+        [WebMethod]
+        public String login(String usuario, String clave)
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM Persona WHERE usuario = @usuario AND clave = clave";
+                    command.Parameters.AddWithValue("@usuario", usuario);
+                    command.Parameters.AddWithValue("@clave", clave);
+                    command.CommandType = CommandType.Text;
+                    var reader = command.ExecuteReader();
+                    String respuesta = "";
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        respuesta += reader.GetInt32(0) + ",";
+                        respuesta += reader.GetString(1) + ",";
+                        respuesta += reader.GetString(2) + ",";
+                        respuesta += reader.GetString(3) + ",";
+                        respuesta += reader.GetString(4) + ",";
+                        respuesta += reader.GetString(5) + ",";
+                        respuesta += reader.GetByte(6);
+                    }
+                    return respuesta;
+                }
+            }
+        }
+        [WebMethod]
+        public String getMontos()
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM Monto";
+                    command.CommandType = CommandType.Text;
+                    var reader = command.ExecuteReader();
+                    String respuesta = "";
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            respuesta += reader.GetInt32(0) + ",";
+                            respuesta += reader.GetSqlMoney(1).ToDouble();
+                            respuesta += "-";
+                        }
+                    }
+                    return respuesta;
+                }
+            }
+        }
+        [WebMethod]
+        public String getCompanias()
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM Compania";
+                    command.CommandType = CommandType.Text;
+                    var reader = command.ExecuteReader();
+                    String respuesta = "";
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            respuesta += reader.GetInt32(0) + ",";
+                            respuesta += reader.GetString(1);
+                            respuesta += "-";
+                        }
+                    }
+                    return respuesta;
+                }
+            }
+        }
+        [WebMethod]
+        public String getBonificacoines()
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT "+
+                                          " Bonificacion.id,"+
+                                          " Bonificacion.bonificacion,"+
+                                          " Compania.compania,"+
+                                          " Monto.monto"+
+                                          " From Bonificacion"+
+                                          " INNER JOIN Compania ON Bonificacion.compania = compania.id"+
+                                          " INNER JOIN Monto ON Bonificacion.monto = Monto.id";
+                    command.CommandType = CommandType.Text;
+                    var reader = command.ExecuteReader();
+                    String respuesta = "";
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            respuesta += reader.GetInt32(0) + ",";
+                            respuesta += reader.GetSqlMoney(1).ToDouble() + ",";
+                            respuesta += reader.GetString(2) + ",";
+                            respuesta += reader.GetSqlMoney(3).ToDouble();
+                            respuesta += "\n";
+                        }
+                    }
+                    return respuesta;
+                }
+            }
+        }
+        [WebMethod]
+        public String getColaboradores()
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT"+
+                                          " Persona.*,"+
+                                          " Colaborador.id,"+
+                                          " Colaborador.saldo"+
+                                          " From Colaborador"+
+                                          " INNER JOIN Persona ON Colaborador.persona = Persona.id";
+                    command.CommandType = CommandType.Text;
+                    var reader = command.ExecuteReader();
+                    String respuesta = "";
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            respuesta += reader.GetInt32(0) + ",";
+                            respuesta += reader.GetString(1) + ",";
+                            respuesta += reader.GetString(2) + ",";
+                            respuesta += reader.GetString(3) + ",";
+                            respuesta += reader.GetString(4) + ",";
+                            respuesta += reader.GetString(5) + ",";
+                            respuesta += reader.GetByte(6) + ",";
+                            respuesta += reader.GetInt32(7) + ",";
+                            respuesta += reader.GetSqlMoney(8).ToDouble() + ",";
+                            respuesta += "-";
+                        }
+                    }
+                    return respuesta;
+                }
+            }
+        }
+        [WebMethod]
+        public String getRecargas()
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT"+
+                                          " Recarga.id,"+
+                                          " Recarga.numero,"+
+                                          " Persona.id,"+
+                                          " Persona.nombre,"+
+                                          " Persona.apepat,"+
+                                          " Persona.apemat,"+
+                                          " Bonificacion.bonificacion,"+
+                                          " Monto.monto,"+
+                                          " Compania.compania"+
+                                          " From Recarga"+
+                                          " INNER JOIN Persona ON Recarga.persona = Persona.id"+
+                                          " INNER JOIN Bonificacion ON Recarga.bonificacion = Bonificacion.id"+
+                                          " INNER JOIN Monto ON Recarga.monto = Monto.id"+
+                                          " INNER JOIN Compania ON Recarga.compania = Compania.id";
+                    command.CommandType = CommandType.Text;
+                    var reader = command.ExecuteReader();
+                    String respuesta = "";
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            respuesta += reader.GetInt32(0) + ",";
+                            respuesta += reader.GetString(1) + ",";
+                            respuesta += reader.GetInt32(2) + ",";
+                            respuesta += reader.GetString(3) + ",";
+                            respuesta += reader.GetString(4) + ",";
+                            respuesta += reader.GetString(5) + ",";
+                            respuesta += reader.GetSqlMoney(6).ToDouble() + ",";
+                            respuesta += reader.GetSqlMoney(7).ToDouble() + ",";
+                            respuesta += reader.GetString(8) + ",";
+                            respuesta += "-";
+                        }
+                    }
+                    return respuesta;
+                }
+            }
+        }
+        [WebMethod]
+        public bool setMonto(double monto)
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO Monto VALUES (@monto)";
+                    command.Parameters.AddWithValue("@monto", monto);
+                    command.CommandType = CommandType.Text;
+                    var row = command.ExecuteNonQuery();
+                    if (row > 0)
+                        return true;
+                    return false;
+                }
+            }
+        }
+        [WebMethod]
+        public bool setCompania(String compania)
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO Compania VALUES (@compania)";
+                    command.Parameters.AddWithValue("@compania", compania);
+                    command.CommandType = CommandType.Text;
+                    var row = command.ExecuteNonQuery();
+                    if (row > 0)
+                        return true;
+                    return false;
+                }
+            }
+        }
+        [WebMethod]
+        public bool setColaborador(String nombre, String apepat, String apemat, String usuario, String clave, double saldo)
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                bool insert = false;
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO Persona VALUES (@nombre, @apepat, @apemat, @usuario, @clave, 1)";
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@apepat", apepat);
+                    command.Parameters.AddWithValue("@apemat", apemat);
+                    command.Parameters.AddWithValue("@usuario", usuario);
+                    command.Parameters.AddWithValue("@clave", clave);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                }
+                int id = -1;
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT id FROM Persona WHERE usuario = @usuario AND clave = @clave AND tipo = 1";
+                    command.Parameters.AddWithValue("@usuario", usuario);
+                    command.Parameters.AddWithValue("@clave", clave);
+                    command.CommandType = CommandType.Text;
+                    var reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        id = reader.GetInt32(0);
+                    }
+                    reader.Close();
+                }
+                if (id != -1)
+                {
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "INSERT INTO Colaborador VALUES (@saldo, @persona)";
+                        command.Parameters.AddWithValue("@saldo", saldo);
+                        command.Parameters.AddWithValue("@persona", id);
+                        command.CommandType = CommandType.Text;
+                        insert = command.ExecuteNonQuery() > 0;
+                        return insert;
+                    }
+                }
+                return insert;
+            }
+        }
+        [WebMethod]
+        public bool setBonificacion(double bonificacion, int idMonto, int idCompania)
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                bool insert = false;
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO Bonificacion VALUES (@bonificacion, @monto, @compania)";
+                    command.Parameters.AddWithValue("@bonificacion", bonificacion);
+                    command.Parameters.AddWithValue("@monto", idMonto);
+                    command.Parameters.AddWithValue("@compania", idCompania);
+                    command.CommandType = CommandType.Text;
+                    return command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+        [WebMethod]
+        public void updateColaborador(int idColaborador,String nombre, String apepat, String apemat, String usuario, String clave, double saldo)
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                bool update = false;
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Persona SET nombre = @nombre, apepat = @apepat, apemat = @apemat, usuario = @usuario, clave = @clave WHERE id = @id";
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@apepat", apepat);
+                    command.Parameters.AddWithValue("@apemat", apemat);
+                    command.Parameters.AddWithValue("@usuario", usuario);
+                    command.Parameters.AddWithValue("@clave", clave);
+                    command.Parameters.AddWithValue("@id", idColaborador);
+                    command.CommandType = CommandType.Text;
+                    update = command.ExecuteNonQuery()>0;
+
+                }
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Colaborador SET saldo = @saldo WHERE persona = @id";
+                    command.Parameters.AddWithValue("@saldo", saldo);
+                    command.Parameters.AddWithValue("@id", idColaborador);
+                    command.CommandType = CommandType.Text;
+                    update = command.ExecuteNonQuery() > 0;
+
+                }
+            }
+        }
+        [WebMethod]
+        public bool updateBonificacion(int idBonificacion, double bonificacion, int idMonto, int idCompania)
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Bonificacion set bonificacion = @bonificacion, monto = @monto, compania = @compania WHERE id = @id";
+                    command.Parameters.AddWithValue("@bonificacion", bonificacion);
+                    command.Parameters.AddWithValue("@monto", idMonto);
+                    command.Parameters.AddWithValue("@compania", idCompania);
+                    command.Parameters.AddWithValue("@id", idBonificacion);
+                    command.CommandType = CommandType.Text;
+                    return command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+    }
+}
