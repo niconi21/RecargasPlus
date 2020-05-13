@@ -16,5 +16,12 @@ namespace RecargaPlus.src.views.pages
         {
             InitializeComponent();
         }
+
+        private void btn_ingresar_Click(object sender, EventArgs e)
+        {
+            Inicio_page inicio = new Inicio_page();
+            inicio.Show();
+            this.Hide();
+        }
     }
 }
