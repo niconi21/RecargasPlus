@@ -20,8 +20,25 @@ namespace RecargaPlus.src.views.pages
             InitializeComponent();
             this.lbl_nombre.Text = Usuario_cache.Nombre + " " + Usuario_cache.Apepat + " " + Usuario_cache.Apemat;
             this.lbl_cargo.Text = Usuario_cache.Tipo;
-            Recargas_frame recargas = new Recargas_frame();
-            configurarContenedor(recargas);
+            validarMenu();
+        }
+        private void validarMenu()
+        {
+            if (Usuario_cache.Tipo == Strings.ADMINISTRADOR)
+            {
+                panel3.Visible = false;
+                panel4.Visible = false;
+                Colaboradores_frame colaboradores = new Colaboradores_frame();
+                configurarContenedor(colaboradores);
+            }
+            if (Usuario_cache.Tipo == Strings.COLABORADOR)
+            {
+                panel5.Visible = false;
+                panel6.Visible = false;
+                panel7.Visible = false;
+                Recargas_frame recargas = new Recargas_frame();
+                configurarContenedor(recargas);
+            }
         }
 
         private void configurarContenedor(Control c)

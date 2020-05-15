@@ -16,7 +16,7 @@ namespace Controller.cache
         public static String Usuario { get; set; }
         public static String Clave { get; set; }
         public static String Tipo { get; set; }
-        public static int Saldo { get; set; }
+        public static double Saldo { get; set; }
         
     }
 }

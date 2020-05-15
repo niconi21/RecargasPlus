@@ -15,7 +15,7 @@ namespace Controller.objects
         public String Apemat { get; set; }
         public String Usuario { get; set; }
         public String Clave { get; set; }
-        public byte Tipo { get; set; }
-        public int Saldo { get; set; }
+        public String Tipo { get; set; }
+        public double Saldo { get; set; }
     }
 }

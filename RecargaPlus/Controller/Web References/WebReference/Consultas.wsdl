@@ -17,33 +17,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="getMontos">
+      <s:element name="getBonificaciones">
         <s:complexType />
       </s:element>
-      <s:element name="getMontosResponse">
+      <s:element name="getBonificacionesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="getMontosResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="getBonificacionesResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="getCompanias">
-        <s:complexType />
-      </s:element>
-      <s:element name="getCompaniasResponse">
+      <s:element name="getBonificacion">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="getCompaniasResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCompania" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idMonto" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="getBonificacoines">
-        <s:complexType />
-      </s:element>
-      <s:element name="getBonificacoinesResponse">
+      <s:element name="getBonificacionResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="getBonificacoinesResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="getBonificacionResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -57,8 +52,32 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="getRecargas">
+      <s:element name="getCompanias">
         <s:complexType />
+      </s:element>
+      <s:element name="getCompaniasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCompaniasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMontos">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMontosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMontosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRecargas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPersona" type="s:int" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="getRecargasResponse">
         <s:complexType>
@@ -67,31 +86,19 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="setMonto">
+      <s:element name="setBonificacion">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="bonificacion" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="idMonto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCompania" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="setMontoResponse">
+      <s:element name="setBonificacionResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="setMontoResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="setCompania">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="compania" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="setCompaniaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="setCompaniaResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="setBonificacionResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -114,37 +121,51 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="setBonificacion">
+      <s:element name="setCompania">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="bonificacion" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="compania" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCompaniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setCompaniaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setMonto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setMontoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setMontoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setRecarga">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPersona" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idBonificacion" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="idMonto" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="idCompania" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="setBonificacionResponse">
+      <s:element name="setRecargaResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="setBonificacionResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="setRecargaResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
-      </s:element>
-      <s:element name="updateColaborador">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idColaborador" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="apepat" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="apemat" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="saldo" type="s:double" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="updateColaboradorResponse">
-        <s:complexType />
       </s:element>
       <s:element name="updateBonificacion">
         <s:complexType>
@@ -163,6 +184,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="updateColaborador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPersona" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apepat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apemat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saldo" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateColaboradorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateColaboradorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="loginSoapIn">
@@ -171,23 +212,17 @@
   <wsdl:message name="loginSoapOut">
     <wsdl:part name="parameters" element="tns:loginResponse" />
   </wsdl:message>
-  <wsdl:message name="getMontosSoapIn">
-    <wsdl:part name="parameters" element="tns:getMontos" />
+  <wsdl:message name="getBonificacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:getBonificaciones" />
   </wsdl:message>
-  <wsdl:message name="getMontosSoapOut">
-    <wsdl:part name="parameters" element="tns:getMontosResponse" />
+  <wsdl:message name="getBonificacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:getBonificacionesResponse" />
   </wsdl:message>
-  <wsdl:message name="getCompaniasSoapIn">
-    <wsdl:part name="parameters" element="tns:getCompanias" />
+  <wsdl:message name="getBonificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:getBonificacion" />
   </wsdl:message>
-  <wsdl:message name="getCompaniasSoapOut">
-    <wsdl:part name="parameters" element="tns:getCompaniasResponse" />
-  </wsdl:message>
-  <wsdl:message name="getBonificacoinesSoapIn">
-    <wsdl:part name="parameters" element="tns:getBonificacoines" />
-  </wsdl:message>
-  <wsdl:message name="getBonificacoinesSoapOut">
-    <wsdl:part name="parameters" element="tns:getBonificacoinesResponse" />
+  <wsdl:message name="getBonificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:getBonificacionResponse" />
   </wsdl:message>
   <wsdl:message name="getColaboradoresSoapIn">
     <wsdl:part name="parameters" element="tns:getColaboradores" />
@@ -195,29 +230,23 @@
   <wsdl:message name="getColaboradoresSoapOut">
     <wsdl:part name="parameters" element="tns:getColaboradoresResponse" />
   </wsdl:message>
+  <wsdl:message name="getCompaniasSoapIn">
+    <wsdl:part name="parameters" element="tns:getCompanias" />
+  </wsdl:message>
+  <wsdl:message name="getCompaniasSoapOut">
+    <wsdl:part name="parameters" element="tns:getCompaniasResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMontosSoapIn">
+    <wsdl:part name="parameters" element="tns:getMontos" />
+  </wsdl:message>
+  <wsdl:message name="getMontosSoapOut">
+    <wsdl:part name="parameters" element="tns:getMontosResponse" />
+  </wsdl:message>
   <wsdl:message name="getRecargasSoapIn">
     <wsdl:part name="parameters" element="tns:getRecargas" />
   </wsdl:message>
   <wsdl:message name="getRecargasSoapOut">
     <wsdl:part name="parameters" element="tns:getRecargasResponse" />
-  </wsdl:message>
-  <wsdl:message name="setMontoSoapIn">
-    <wsdl:part name="parameters" element="tns:setMonto" />
-  </wsdl:message>
-  <wsdl:message name="setMontoSoapOut">
-    <wsdl:part name="parameters" element="tns:setMontoResponse" />
-  </wsdl:message>
-  <wsdl:message name="setCompaniaSoapIn">
-    <wsdl:part name="parameters" element="tns:setCompania" />
-  </wsdl:message>
-  <wsdl:message name="setCompaniaSoapOut">
-    <wsdl:part name="parameters" element="tns:setCompaniaResponse" />
-  </wsdl:message>
-  <wsdl:message name="setColaboradorSoapIn">
-    <wsdl:part name="parameters" element="tns:setColaborador" />
-  </wsdl:message>
-  <wsdl:message name="setColaboradorSoapOut">
-    <wsdl:part name="parameters" element="tns:setColaboradorResponse" />
   </wsdl:message>
   <wsdl:message name="setBonificacionSoapIn">
     <wsdl:part name="parameters" element="tns:setBonificacion" />
@@ -225,11 +254,29 @@
   <wsdl:message name="setBonificacionSoapOut">
     <wsdl:part name="parameters" element="tns:setBonificacionResponse" />
   </wsdl:message>
-  <wsdl:message name="updateColaboradorSoapIn">
-    <wsdl:part name="parameters" element="tns:updateColaborador" />
+  <wsdl:message name="setColaboradorSoapIn">
+    <wsdl:part name="parameters" element="tns:setColaborador" />
   </wsdl:message>
-  <wsdl:message name="updateColaboradorSoapOut">
-    <wsdl:part name="parameters" element="tns:updateColaboradorResponse" />
+  <wsdl:message name="setColaboradorSoapOut">
+    <wsdl:part name="parameters" element="tns:setColaboradorResponse" />
+  </wsdl:message>
+  <wsdl:message name="setCompaniaSoapIn">
+    <wsdl:part name="parameters" element="tns:setCompania" />
+  </wsdl:message>
+  <wsdl:message name="setCompaniaSoapOut">
+    <wsdl:part name="parameters" element="tns:setCompaniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="setMontoSoapIn">
+    <wsdl:part name="parameters" element="tns:setMonto" />
+  </wsdl:message>
+  <wsdl:message name="setMontoSoapOut">
+    <wsdl:part name="parameters" element="tns:setMontoResponse" />
+  </wsdl:message>
+  <wsdl:message name="setRecargaSoapIn">
+    <wsdl:part name="parameters" element="tns:setRecarga" />
+  </wsdl:message>
+  <wsdl:message name="setRecargaSoapOut">
+    <wsdl:part name="parameters" element="tns:setRecargaResponse" />
   </wsdl:message>
   <wsdl:message name="updateBonificacionSoapIn">
     <wsdl:part name="parameters" element="tns:updateBonificacion" />
@@ -237,54 +284,68 @@
   <wsdl:message name="updateBonificacionSoapOut">
     <wsdl:part name="parameters" element="tns:updateBonificacionResponse" />
   </wsdl:message>
+  <wsdl:message name="updateColaboradorSoapIn">
+    <wsdl:part name="parameters" element="tns:updateColaborador" />
+  </wsdl:message>
+  <wsdl:message name="updateColaboradorSoapOut">
+    <wsdl:part name="parameters" element="tns:updateColaboradorResponse" />
+  </wsdl:message>
   <wsdl:portType name="ConsultasSoap">
     <wsdl:operation name="login">
       <wsdl:input message="tns:loginSoapIn" />
       <wsdl:output message="tns:loginSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="getMontos">
-      <wsdl:input message="tns:getMontosSoapIn" />
-      <wsdl:output message="tns:getMontosSoapOut" />
+    <wsdl:operation name="getBonificaciones">
+      <wsdl:input message="tns:getBonificacionesSoapIn" />
+      <wsdl:output message="tns:getBonificacionesSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="getCompanias">
-      <wsdl:input message="tns:getCompaniasSoapIn" />
-      <wsdl:output message="tns:getCompaniasSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="getBonificacoines">
-      <wsdl:input message="tns:getBonificacoinesSoapIn" />
-      <wsdl:output message="tns:getBonificacoinesSoapOut" />
+    <wsdl:operation name="getBonificacion">
+      <wsdl:input message="tns:getBonificacionSoapIn" />
+      <wsdl:output message="tns:getBonificacionSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="getColaboradores">
       <wsdl:input message="tns:getColaboradoresSoapIn" />
       <wsdl:output message="tns:getColaboradoresSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="getCompanias">
+      <wsdl:input message="tns:getCompaniasSoapIn" />
+      <wsdl:output message="tns:getCompaniasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMontos">
+      <wsdl:input message="tns:getMontosSoapIn" />
+      <wsdl:output message="tns:getMontosSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="getRecargas">
       <wsdl:input message="tns:getRecargasSoapIn" />
       <wsdl:output message="tns:getRecargasSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="setMonto">
-      <wsdl:input message="tns:setMontoSoapIn" />
-      <wsdl:output message="tns:setMontoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="setCompania">
-      <wsdl:input message="tns:setCompaniaSoapIn" />
-      <wsdl:output message="tns:setCompaniaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="setColaborador">
-      <wsdl:input message="tns:setColaboradorSoapIn" />
-      <wsdl:output message="tns:setColaboradorSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="setBonificacion">
       <wsdl:input message="tns:setBonificacionSoapIn" />
       <wsdl:output message="tns:setBonificacionSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="updateColaborador">
-      <wsdl:input message="tns:updateColaboradorSoapIn" />
-      <wsdl:output message="tns:updateColaboradorSoapOut" />
+    <wsdl:operation name="setColaborador">
+      <wsdl:input message="tns:setColaboradorSoapIn" />
+      <wsdl:output message="tns:setColaboradorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setCompania">
+      <wsdl:input message="tns:setCompaniaSoapIn" />
+      <wsdl:output message="tns:setCompaniaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setMonto">
+      <wsdl:input message="tns:setMontoSoapIn" />
+      <wsdl:output message="tns:setMontoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setRecarga">
+      <wsdl:input message="tns:setRecargaSoapIn" />
+      <wsdl:output message="tns:setRecargaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="updateBonificacion">
       <wsdl:input message="tns:updateBonificacionSoapIn" />
       <wsdl:output message="tns:updateBonificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateColaborador">
+      <wsdl:input message="tns:updateColaboradorSoapIn" />
+      <wsdl:output message="tns:updateColaboradorSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ConsultasSoap" type="tns:ConsultasSoap">
@@ -298,8 +359,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getMontos">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getMontos" style="document" />
+    <wsdl:operation name="getBonificaciones">
+      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificaciones" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -307,17 +368,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCompanias">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getCompanias" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getBonificacoines">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificacoines" style="document" />
+    <wsdl:operation name="getBonificacion">
+      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -334,35 +386,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getCompanias">
+      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getCompanias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMontos">
+      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getMontos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getRecargas">
       <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getRecargas" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="setMonto">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setMonto" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="setCompania">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setCompania" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="setColaborador">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setColaborador" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -379,8 +422,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateColaborador">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/updateColaborador" style="document" />
+    <wsdl:operation name="setColaborador">
+      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setColaborador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCompania">
+      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setCompania" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMonto">
+      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setMonto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRecarga">
+      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setRecarga" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -390,6 +460,15 @@
     </wsdl:operation>
     <wsdl:operation name="updateBonificacion">
       <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/updateBonificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateColaborador">
+      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/updateColaborador" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -409,8 +488,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getMontos">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getMontos" style="document" />
+    <wsdl:operation name="getBonificaciones">
+      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificaciones" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -418,17 +497,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="getCompanias">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getCompanias" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="getBonificacoines">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificacoines" style="document" />
+    <wsdl:operation name="getBonificacion">
+      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -445,35 +515,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getCompanias">
+      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getCompanias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMontos">
+      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getMontos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getRecargas">
       <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getRecargas" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="setMonto">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setMonto" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="setCompania">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setCompania" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="setColaborador">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setColaborador" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -490,8 +551,35 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="updateColaborador">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/updateColaborador" style="document" />
+    <wsdl:operation name="setColaborador">
+      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setColaborador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCompania">
+      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setCompania" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMonto">
+      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setMonto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setRecarga">
+      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setRecarga" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -508,13 +596,22 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="updateColaborador">
+      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/updateColaborador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Consultas">
     <wsdl:port name="ConsultasSoap" binding="tns:ConsultasSoap">
-      <soap:address location="http://localhost/webServicesRecargaPlus/Consultas.asmx" />
+      <soap:address location="http://192.168.1.72/webServicesRecargaPlus/Consultas.asmx" />
     </wsdl:port>
     <wsdl:port name="ConsultasSoap12" binding="tns:ConsultasSoap12">
-      <soap12:address location="http://localhost/webServicesRecargaPlus/Consultas.asmx" />
+      <soap12:address location="http://192.168.1.72/webServicesRecargaPlus/Consultas.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controller.objects
+namespace RecargaPlus.Moldes
 {
-    public class Bonificacion
+    public class Bonificacoines_administrador
     {
         public int ID { get; set; }
         public double bonificacion { get; set; }
-        public Compania Compania { get; set; }
-        public Monto Monto { get; set; }
+        public String Compania { get; set; }
+        public double Monto { get; set; }
     }
 }

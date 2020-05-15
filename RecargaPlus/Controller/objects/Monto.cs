@@ -9,6 +9,6 @@ namespace Controller.objects
     public class Monto
     {
         public int ID { get; set; }
-        public int monto { get; set; }
+        public double monto { get; set; }
     }
 }

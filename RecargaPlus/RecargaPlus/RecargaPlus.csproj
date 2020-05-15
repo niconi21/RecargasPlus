@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Moldes\Bonificacoines_administrador.cs" />
+    <Compile Include="Moldes\Recargas_colaborador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="views\frame\Bonificaciones_frame.cs">
@@ -126,6 +128,9 @@
       <DependentUpon>Login_page.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Controller.objects.Colaborador.datasource" />
+    <None Include="Properties\DataSources\Controller.objects.Recarga.datasource" />
+    <None Include="Properties\DataSources\RecargaPlus.Moldes.Bonificacoines_administrador.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

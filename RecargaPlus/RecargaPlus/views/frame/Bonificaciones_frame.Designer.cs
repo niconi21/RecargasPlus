@@ -37,13 +37,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.txt_numero = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Compania = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cb_monto = new System.Windows.Forms.ComboBox();
+            this.cb_compania = new System.Windows.Forms.ComboBox();
+            this.txt_bonificacion = new System.Windows.Forms.TextBox();
+            this.tabla_bonificaciones = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bonificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bonificacoinesadministradorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_bonificaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bonificacoinesadministradorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_actualizar
@@ -61,6 +65,7 @@
             this.btn_actualizar.TabIndex = 34;
             this.btn_actualizar.Text = "Actualizar";
             this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // btn_registrar
             // 
@@ -77,6 +82,7 @@
             this.btn_registrar.TabIndex = 33;
             this.btn_registrar.Text = "Registrar";
             this.btn_registrar.UseVisualStyleBackColor = true;
+            this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
             // label1
             // 
@@ -111,38 +117,38 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Monto:";
             // 
-            // comboBox1
+            // cb_monto
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(235, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
-            this.comboBox1.TabIndex = 35;
+            this.cb_monto.FormattingEnabled = true;
+            this.cb_monto.Location = new System.Drawing.Point(235, 39);
+            this.cb_monto.Name = "cb_monto";
+            this.cb_monto.Size = new System.Drawing.Size(140, 21);
+            this.cb_monto.TabIndex = 35;
             // 
-            // comboBox2
+            // cb_compania
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(235, 80);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 21);
-            this.comboBox2.TabIndex = 36;
+            this.cb_compania.FormattingEnabled = true;
+            this.cb_compania.Location = new System.Drawing.Point(235, 80);
+            this.cb_compania.Name = "cb_compania";
+            this.cb_compania.Size = new System.Drawing.Size(140, 21);
+            this.cb_compania.TabIndex = 36;
             // 
-            // txt_numero
+            // txt_bonificacion
             // 
-            this.txt_numero.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_numero.Font = new System.Drawing.Font("Perpetua Titling MT", 10F, System.Drawing.FontStyle.Bold);
-            this.txt_numero.Location = new System.Drawing.Point(235, 123);
-            this.txt_numero.Name = "txt_numero";
-            this.txt_numero.PasswordChar = '*';
-            this.txt_numero.Size = new System.Drawing.Size(212, 17);
-            this.txt_numero.TabIndex = 37;
+            this.txt_bonificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_bonificacion.Font = new System.Drawing.Font("Perpetua Titling MT", 10F, System.Drawing.FontStyle.Bold);
+            this.txt_bonificacion.Location = new System.Drawing.Point(235, 123);
+            this.txt_bonificacion.Name = "txt_bonificacion";
+            this.txt_bonificacion.Size = new System.Drawing.Size(212, 17);
+            this.txt_bonificacion.TabIndex = 37;
             // 
-            // dataGridView1
+            // tabla_bonificaciones
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(124)))), ((int)(((byte)(45)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.tabla_bonificaciones.AutoGenerateColumns = false;
+            this.tabla_bonificaciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(124)))), ((int)(((byte)(45)))));
+            this.tabla_bonificaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tabla_bonificaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.tabla_bonificaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(111)))), ((int)(((byte)(7)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,15 +156,18 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Compania});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 253);
-            this.dataGridView1.Name = "dataGridView1";
+            this.tabla_bonificaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tabla_bonificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla_bonificaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bonificacionDataGridViewTextBoxColumn,
+            this.companiaDataGridViewTextBoxColumn,
+            this.montoDataGridViewTextBoxColumn});
+            this.tabla_bonificaciones.DataSource = this.bonificacoinesadministradorBindingSource;
+            this.tabla_bonificaciones.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabla_bonificaciones.EnableHeadersVisualStyles = false;
+            this.tabla_bonificaciones.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabla_bonificaciones.Location = new System.Drawing.Point(0, 253);
+            this.tabla_bonificaciones.Name = "tabla_bonificaciones";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(150)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -166,23 +175,15 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tabla_bonificaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(150)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(646, 244);
-            this.dataGridView1.TabIndex = 38;
-            // 
-            // Compania
-            // 
-            this.Compania.DataPropertyName = "Compania";
-            this.Compania.HeaderText = "Compañía";
-            this.Compania.Name = "Compania";
-            // 
-            // bonificacionBindingSource
-            // 
+            this.tabla_bonificaciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.tabla_bonificaciones.Size = new System.Drawing.Size(646, 244);
+            this.tabla_bonificaciones.TabIndex = 38;
+            this.tabla_bonificaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_bonificaciones_CellClick);
             // 
             // label7
             // 
@@ -196,16 +197,38 @@
             this.label7.TabIndex = 39;
             this.label7.Text = "Bonificaciones";
             // 
+            // bonificacionDataGridViewTextBoxColumn
+            // 
+            this.bonificacionDataGridViewTextBoxColumn.DataPropertyName = "bonificacion";
+            this.bonificacionDataGridViewTextBoxColumn.HeaderText = "bonificacion";
+            this.bonificacionDataGridViewTextBoxColumn.Name = "bonificacionDataGridViewTextBoxColumn";
+            // 
+            // companiaDataGridViewTextBoxColumn
+            // 
+            this.companiaDataGridViewTextBoxColumn.DataPropertyName = "Compania";
+            this.companiaDataGridViewTextBoxColumn.HeaderText = "Compania";
+            this.companiaDataGridViewTextBoxColumn.Name = "companiaDataGridViewTextBoxColumn";
+            // 
+            // montoDataGridViewTextBoxColumn
+            // 
+            this.montoDataGridViewTextBoxColumn.DataPropertyName = "Monto";
+            this.montoDataGridViewTextBoxColumn.HeaderText = "Monto";
+            this.montoDataGridViewTextBoxColumn.Name = "montoDataGridViewTextBoxColumn";
+            // 
+            // bonificacoinesadministradorBindingSource
+            // 
+            this.bonificacoinesadministradorBindingSource.DataSource = typeof(RecargaPlus.Moldes.Bonificacoines_administrador);
+            // 
             // Bonificaciones_frame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(69)))));
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txt_numero);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.tabla_bonificaciones);
+            this.Controls.Add(this.txt_bonificacion);
+            this.Controls.Add(this.cb_compania);
+            this.Controls.Add(this.cb_monto);
             this.Controls.Add(this.btn_actualizar);
             this.Controls.Add(this.btn_registrar);
             this.Controls.Add(this.label1);
@@ -213,7 +236,8 @@
             this.Controls.Add(this.label2);
             this.Name = "Bonificaciones_frame";
             this.Size = new System.Drawing.Size(646, 497);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_bonificaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bonificacoinesadministradorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,11 +250,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox txt_numero;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Compania;
+        private System.Windows.Forms.ComboBox cb_monto;
+        private System.Windows.Forms.ComboBox cb_compania;
+        private System.Windows.Forms.TextBox txt_bonificacion;
+        private System.Windows.Forms.DataGridView tabla_bonificaciones;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bonificacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bonificacoinesadministradorBindingSource;
     }
 }

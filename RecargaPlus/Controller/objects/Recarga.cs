@@ -10,9 +10,9 @@ namespace Controller.objects
     {
         public int ID { get; set; }
         public String Numero { get; set; }
-        public int Colaborador { get; set; }
-        public int Bonificacion { get; set; }
-        public int Compania { get; set; }
-        public int Monto { get; set; }
+        public Colaborador Colaborador { get; set; }
+        public Bonificacion Bonificacion { get; set; }
+        public Compania Compania { get; set; }
+        public Monto Monto { get; set; }
     }
 }

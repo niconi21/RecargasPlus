@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,23 +38,23 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabla_companias = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabla_montos = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_ingresar = new System.Windows.Forms.Button();
+            this.btn_AgregarCompania = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.txt_compania = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregarMonto = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_monto = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_companias)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_montos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -118,12 +117,9 @@
             this.tabla_companias.Size = new System.Drawing.Size(632, 166);
             this.tabla_companias.TabIndex = 19;
             // 
-            // companiaBindingSource
-            // 
-            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.tabla_montos);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -132,12 +128,12 @@
             this.tabPage2.Text = "Montos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // tabla_montos
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(124)))), ((int)(((byte)(45)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.tabla_montos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(124)))), ((int)(((byte)(45)))));
+            this.tabla_montos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tabla_montos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.tabla_montos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(111)))), ((int)(((byte)(7)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,13 +141,13 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
+            this.tabla_montos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.tabla_montos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla_montos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabla_montos.EnableHeadersVisualStyles = false;
+            this.tabla_montos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabla_montos.Location = new System.Drawing.Point(3, 3);
+            this.tabla_montos.Name = "tabla_montos";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(150)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,17 +155,14 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.tabla_montos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(150)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(77)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Size = new System.Drawing.Size(632, 166);
-            this.dataGridView1.TabIndex = 20;
-            // 
-            // montoBindingSource
-            // 
+            this.tabla_montos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.tabla_montos.Size = new System.Drawing.Size(632, 166);
+            this.tabla_montos.TabIndex = 20;
             // 
             // label7
             // 
@@ -185,29 +178,31 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_ingresar);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btn_AgregarCompania);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txt_nombre);
-            this.panel1.Location = new System.Drawing.Point(7, 115);
+            this.panel1.Controls.Add(this.txt_compania);
+            this.panel1.Location = new System.Drawing.Point(36, 90);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(270, 155);
             this.panel1.TabIndex = 28;
             // 
-            // btn_ingresar
+            // btn_AgregarCompania
             // 
-            this.btn_ingresar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(216)))), ((int)(((byte)(124)))));
-            this.btn_ingresar.FlatAppearance.BorderSize = 3;
-            this.btn_ingresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(178)))), ((int)(((byte)(75)))));
-            this.btn_ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(214)))), ((int)(((byte)(122)))));
-            this.btn_ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ingresar.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_ingresar.ForeColor = System.Drawing.Color.White;
-            this.btn_ingresar.Location = new System.Drawing.Point(45, 110);
-            this.btn_ingresar.Name = "btn_ingresar";
-            this.btn_ingresar.Size = new System.Drawing.Size(184, 30);
-            this.btn_ingresar.TabIndex = 30;
-            this.btn_ingresar.Text = "Agregar compañia";
-            this.btn_ingresar.UseVisualStyleBackColor = true;
+            this.btn_AgregarCompania.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(216)))), ((int)(((byte)(124)))));
+            this.btn_AgregarCompania.FlatAppearance.BorderSize = 3;
+            this.btn_AgregarCompania.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(178)))), ((int)(((byte)(75)))));
+            this.btn_AgregarCompania.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(214)))), ((int)(((byte)(122)))));
+            this.btn_AgregarCompania.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AgregarCompania.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
+            this.btn_AgregarCompania.ForeColor = System.Drawing.Color.White;
+            this.btn_AgregarCompania.Location = new System.Drawing.Point(45, 110);
+            this.btn_AgregarCompania.Name = "btn_AgregarCompania";
+            this.btn_AgregarCompania.Size = new System.Drawing.Size(184, 30);
+            this.btn_AgregarCompania.TabIndex = 30;
+            this.btn_AgregarCompania.Text = "Agregar compañia";
+            this.btn_AgregarCompania.UseVisualStyleBackColor = true;
+            this.btn_AgregarCompania.Click += new System.EventHandler(this.btn_AgregarCompania_Click);
             // 
             // label2
             // 
@@ -216,25 +211,25 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Nombre:";
+            this.label2.Text = "Compañia:";
             // 
-            // txt_nombre
+            // txt_compania
             // 
-            this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_nombre.Font = new System.Drawing.Font("Perpetua Titling MT", 10F, System.Drawing.FontStyle.Bold);
-            this.txt_nombre.Location = new System.Drawing.Point(96, 46);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(143, 17);
-            this.txt_nombre.TabIndex = 8;
+            this.txt_compania.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_compania.Font = new System.Drawing.Font("Perpetua Titling MT", 10F, System.Drawing.FontStyle.Bold);
+            this.txt_compania.Location = new System.Drawing.Point(113, 46);
+            this.txt_compania.Name = "txt_compania";
+            this.txt_compania.Size = new System.Drawing.Size(134, 17);
+            this.txt_compania.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Perpetua Titling MT", 15F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(48, 88);
+            this.label1.Location = new System.Drawing.Point(77, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 24);
             this.label1.TabIndex = 29;
@@ -245,7 +240,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Perpetua Titling MT", 15F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(357, 88);
+            this.label3.Location = new System.Drawing.Point(386, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 24);
             this.label3.TabIndex = 31;
@@ -253,29 +248,31 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnAgregarMonto);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(316, 115);
+            this.panel2.Controls.Add(this.txt_monto);
+            this.panel2.Location = new System.Drawing.Point(345, 90);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(270, 155);
             this.panel2.TabIndex = 30;
             // 
-            // button1
+            // btnAgregarMonto
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(216)))), ((int)(((byte)(124)))));
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(178)))), ((int)(((byte)(75)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(214)))), ((int)(((byte)(122)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(45, 110);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 30);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Agregar monto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregarMonto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(216)))), ((int)(((byte)(124)))));
+            this.btnAgregarMonto.FlatAppearance.BorderSize = 3;
+            this.btnAgregarMonto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(178)))), ((int)(((byte)(75)))));
+            this.btnAgregarMonto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(214)))), ((int)(((byte)(122)))));
+            this.btnAgregarMonto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarMonto.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarMonto.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarMonto.Location = new System.Drawing.Point(45, 110);
+            this.btnAgregarMonto.Name = "btnAgregarMonto";
+            this.btnAgregarMonto.Size = new System.Drawing.Size(184, 30);
+            this.btnAgregarMonto.TabIndex = 30;
+            this.btnAgregarMonto.Text = "Agregar monto";
+            this.btnAgregarMonto.UseVisualStyleBackColor = true;
+            this.btnAgregarMonto.Click += new System.EventHandler(this.btnAgregarMonto_Click);
             // 
             // label4
             // 
@@ -284,18 +281,18 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(12, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 17);
+            this.label4.Size = new System.Drawing.Size(71, 17);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Nombre:";
+            this.label4.Text = "Monto:";
             // 
-            // textBox1
+            // txt_monto
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Perpetua Titling MT", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(96, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 17);
-            this.textBox1.TabIndex = 8;
+            this.txt_monto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_monto.Font = new System.Drawing.Font("Perpetua Titling MT", 10F, System.Drawing.FontStyle.Bold);
+            this.txt_monto.Location = new System.Drawing.Point(96, 46);
+            this.txt_monto.Name = "txt_monto";
+            this.txt_monto.Size = new System.Drawing.Size(143, 17);
+            this.txt_monto.TabIndex = 8;
             // 
             // MontoCompania_frame
             // 
@@ -314,7 +311,7 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabla_companias)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla_montos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -330,18 +327,18 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView tabla_companias;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabla_montos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.TextBox txt_compania;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_ingresar;
+        private System.Windows.Forms.Button btn_AgregarCompania;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarMonto;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_monto;
   
     }
 }

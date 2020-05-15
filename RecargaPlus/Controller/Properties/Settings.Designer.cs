@@ -26,10 +26,10 @@ namespace Controller.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/webServicesRecargaPlus/Consultas.asmx")]
-        public string Controller_webService_Consultas {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.1.72/webServicesRecargaPlus/Consultas.asmx")]
+        public string Controller_WebReference_Consultas {
             get {
-                return ((string)(this["Controller_webService_Consultas"]));
+                return ((string)(this["Controller_WebReference_Consultas"]));
             }
         }
     }

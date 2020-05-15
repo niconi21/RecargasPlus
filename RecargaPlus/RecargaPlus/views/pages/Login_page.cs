@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controller;
-using Controller.operations;
 
 namespace RecargaPlus.src.views.pages
 {
@@ -26,7 +25,7 @@ namespace RecargaPlus.src.views.pages
             String clave = txt_clave.Text;
             if (!usuario.Equals("") && !clave.Equals(""))
             {
-                Login_operation operacion = new Login_operation();
+                Operations operacion = new Operations();
                 if (operacion.login(usuario, clave))
                 {
                     Inicio_page inicio = new Inicio_page();

@@ -91,8 +91,8 @@ SELECT * FROM Persona;
 SELECT * FROM Administrador;
 SELECT * FROM Bonificacion;
 SELECT * FROM Recarga;
- 
-
+	
+	
 SELECT
 	Bonificacion.id,
 	Bonificacion.bonificacion,
@@ -109,22 +109,25 @@ SELECT
 From Colaborador
 	INNER JOIN Persona ON Colaborador.persona = Persona.id;
 
-SELECT
+SELECT 
 	Recarga.id,
 	Recarga.numero,
 	Persona.id,
 	Persona.nombre,
 	Persona.apepat,
 	Persona.apemat,
+	Bonificacion.id,
 	Bonificacion.bonificacion,
+	Monto.id,
 	Monto.monto,
+	Compania.id,
 	Compania.compania
-From Recarga
+	From Recarga
 	INNER JOIN Persona ON Recarga.persona = Persona.id
 	INNER JOIN Bonificacion ON Recarga.bonificacion = Bonificacion.id
 	INNER JOIN Monto ON Recarga.monto = Monto.id
-	INNER JOIN Compania ON Recarga.compania = Compania.id;
-
+	INNER JOIN Compania ON Recarga.compania = Compania.id
+	WHERE Recarga.persona = 0;
 INSERT INTO Bonificacion VALUES (2,0,0);
 INSERT INTO Recarga VALUES('231-140-5938',0,0,0,0);
 INSERT INTO Recarga VALUES('231-140-5938',1,0,0,0);
