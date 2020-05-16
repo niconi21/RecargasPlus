@@ -9,7 +9,6 @@ namespace Controller.cache
     public static class Usuario_cache
     {
         public static int IdPersona { get; set; }
-        public static int IdColaborador { get; set; }
         public static String Nombre { get; set; }
         public static String Apepat { get; set; }
         public static String Apemat { get; set; }
