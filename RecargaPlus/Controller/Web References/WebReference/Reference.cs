@@ -43,6 +43,8 @@ namespace Controller.WebReference {
         
         private System.Threading.SendOrPostCallback getRecargasOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getColaboradorOperationCompleted;
+        
         private System.Threading.SendOrPostCallback setBonificacionOperationCompleted;
         
         private System.Threading.SendOrPostCallback setColaboradorOperationCompleted;
@@ -56,6 +58,8 @@ namespace Controller.WebReference {
         private System.Threading.SendOrPostCallback updateBonificacionOperationCompleted;
         
         private System.Threading.SendOrPostCallback updateColaboradorOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback deleteColaboradorOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -117,6 +121,9 @@ namespace Controller.WebReference {
         public event getRecargasCompletedEventHandler getRecargasCompleted;
         
         /// <remarks/>
+        public event getColaboradorCompletedEventHandler getColaboradorCompleted;
+        
+        /// <remarks/>
         public event setBonificacionCompletedEventHandler setBonificacionCompleted;
         
         /// <remarks/>
@@ -136,6 +143,9 @@ namespace Controller.WebReference {
         
         /// <remarks/>
         public event updateColaboradorCompletedEventHandler updateColaboradorCompleted;
+        
+        /// <remarks/>
+        public event deleteColaboradorCompletedEventHandler deleteColaboradorCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/login", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -333,6 +343,35 @@ namespace Controller.WebReference {
             if ((this.getRecargasCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getRecargasCompleted(this, new getRecargasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getColaborador", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string getColaborador(int idPersona) {
+            object[] results = this.Invoke("getColaborador", new object[] {
+                        idPersona});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getColaboradorAsync(int idPersona) {
+            this.getColaboradorAsync(idPersona, null);
+        }
+        
+        /// <remarks/>
+        public void getColaboradorAsync(int idPersona, object userState) {
+            if ((this.getColaboradorOperationCompleted == null)) {
+                this.getColaboradorOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetColaboradorOperationCompleted);
+            }
+            this.InvokeAsync("getColaborador", new object[] {
+                        idPersona}, this.getColaboradorOperationCompleted, userState);
+        }
+        
+        private void OngetColaboradorOperationCompleted(object arg) {
+            if ((this.getColaboradorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getColaboradorCompleted(this, new getColaboradorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -580,6 +619,35 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/deleteColaborador", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool deleteColaborador(int idPersona) {
+            object[] results = this.Invoke("deleteColaborador", new object[] {
+                        idPersona});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void deleteColaboradorAsync(int idPersona) {
+            this.deleteColaboradorAsync(idPersona, null);
+        }
+        
+        /// <remarks/>
+        public void deleteColaboradorAsync(int idPersona, object userState) {
+            if ((this.deleteColaboradorOperationCompleted == null)) {
+                this.deleteColaboradorOperationCompleted = new System.Threading.SendOrPostCallback(this.OndeleteColaboradorOperationCompleted);
+            }
+            this.InvokeAsync("deleteColaborador", new object[] {
+                        idPersona}, this.deleteColaboradorOperationCompleted, userState);
+        }
+        
+        private void OndeleteColaboradorOperationCompleted(object arg) {
+            if ((this.deleteColaboradorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.deleteColaboradorCompleted(this, new deleteColaboradorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -782,6 +850,32 @@ namespace Controller.WebReference {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void getColaboradorCompletedEventHandler(object sender, getColaboradorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getColaboradorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getColaboradorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void setBonificacionCompletedEventHandler(object sender, setBonificacionCompletedEventArgs e);
     
     /// <remarks/>
@@ -949,6 +1043,32 @@ namespace Controller.WebReference {
         private object[] results;
         
         internal updateColaboradorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void deleteColaboradorCompletedEventHandler(object sender, deleteColaboradorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class deleteColaboradorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal deleteColaboradorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

@@ -15,7 +15,6 @@
         android:ems="10"
         android:hint="@string/Clave"
         android:inputType="textPersonName"
-        android:text="niconi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +27,6 @@
         android:ems="10"
         android:hint="@string/usuario"
         android:inputType="textPersonName"
-        android:text="niconi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -184,6 +184,36 @@ namespace Controller
             }
             return recargas;
         }
+        public Colaborador getColaborador(int idPersona)
+        {
+            _consulta = new Consultas();
+            String respuesta = _consulta.getColaborador(idPersona);
+            Colaborador colaborador = new Colaborador();
+            if (!respuesta.Equals(""))
+            {
+                var lineas = respuesta.Split('-');
+                foreach (var linea in lineas)
+                {
+                    if (!linea.Equals(""))
+                    {
+                        var datos = linea.Split(',');
+                        colaborador = new Colaborador
+                        {
+                            IdPersona = int.Parse(datos[0]),
+                            Nombre = datos[1],
+                            Apepat = datos[2],
+                            Apemat = datos[3],
+                            Usuario = datos[4],
+                            Clave = datos[5],
+                            Tipo = byte.Parse(datos[6]) == 0 ? Strings.ADMINISTRADOR : Strings.COLABORADOR,
+                            IdColaborador = int.Parse(datos[7]),
+                            Saldo = double.Parse(datos[8])
+                        };
+                    }
+                }
+            }
+            return colaborador;
+        }
         public bool login(String usuario, String clave)
         {
             _consulta = new Consultas();

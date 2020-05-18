@@ -283,6 +283,45 @@ namespace WebServicesRecargaPlus
             }
         }
         [WebMethod]
+        public String getColaborador(int idPersona)
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT" +
+                                          " Persona.*," +
+                                          " Colaborador.id," +
+                                          " Colaborador.saldo" +
+                                          " From Colaborador" +
+                                          " INNER JOIN Persona ON Colaborador.persona = Persona.id" + 
+                                          " WHERE Colaborador.persona = @persona";
+                    command.Parameters.AddWithValue("@persona", idPersona);
+                    command.CommandType = CommandType.Text;
+                    var reader = command.ExecuteReader();
+                    String respuesta = "";
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        
+                            respuesta += reader.GetInt32(0) + ",";
+                            respuesta += reader.GetString(1) + ",";
+                            respuesta += reader.GetString(2) + ",";
+                            respuesta += reader.GetString(3) + ",";
+                            respuesta += reader.GetString(4) + ",";
+                            respuesta += reader.GetString(5) + ",";
+                            respuesta += reader.GetByte(6) + ",";
+                            respuesta += reader.GetInt32(7) + ",";
+                            respuesta += reader.GetSqlMoney(8).ToDouble();
+                        
+                    }
+                    return respuesta;
+                }
+            }
+        }
+        [WebMethod]
         public bool setBonificacion(String bonificacion, int idMonto, int idCompania)
         {
             using (var connection = new SqlConnection(_stringConexion))

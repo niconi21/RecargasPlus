@@ -79,6 +79,8 @@ namespace RecargaPlus.src.views.frame
                 else
                     MessageBox.Show("La recarga no ha sido realizada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 llenarTablaRecargas();
+                var colaborador = (new Operations()).getColaborador(Usuario_cache.IdPersona);
+                Usuario_cache.Saldo = colaborador.Saldo;
                 this.saldo();
             }else
                 MessageBox.Show("No tienes saldo suficiente para realizar esta recarga", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
