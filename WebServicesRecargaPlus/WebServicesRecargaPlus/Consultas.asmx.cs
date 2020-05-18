@@ -432,8 +432,9 @@ namespace WebServicesRecargaPlus
             }
         }
         [WebMethod]
-        public bool updateColaborador(int idPersona,String nombre, String apepat, String apemat, String usuario, String clave, double saldo)
+        public bool updateColaborador(int idPersona,String nombre, String apepat, String apemat, String usuario, String clave, String saldo)
         {
+            double saldo1 = double.Parse(saldo);
             using (var connection = new SqlConnection(_stringConexion))
             {
                 connection.Open();
@@ -456,7 +457,7 @@ namespace WebServicesRecargaPlus
                 {
                     command.Connection = connection;
                     command.CommandText = "UPDATE Colaborador SET saldo = @saldo WHERE persona = @id";
-                    command.Parameters.AddWithValue("@saldo", saldo);
+                    command.Parameters.AddWithValue("@saldo", saldo1);
                     command.Parameters.AddWithValue("@id", idPersona);
                     command.CommandType = CommandType.Text;
                     update = command.ExecuteNonQuery() > 0;

@@ -81,6 +81,7 @@ public class Recargad extends Fragment {
                     if ((new Operations()).setRecarga(numero, Usuario_cache.idPersona, bonificacion.getId(), idMonto, idCompania)) {
                         Usuario_cache.saldo = saldo - recarga;
                         (new Operations()).updateColaborador(Usuario_cache.idPersona, Usuario_cache.nombre, Usuario_cache.apepat, Usuario_cache.apemat, Usuario_cache.usuario, Usuario_cache.clave, Usuario_cache.saldo);
+
                         Toast.makeText(getContext(), "La recarga ha sido realizada", Toast.LENGTH_SHORT).show();
                         tV_Saldo.setText("Saldo: $"+Usuario_cache.saldo);
                     }else
