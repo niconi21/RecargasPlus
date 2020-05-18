@@ -5,6 +5,7 @@
     <string name="ingresar">Ingresar</string>
     <string name="erron_login_incorrecto">Error: Usuario y/o clave incorrectos</string>
     <string name="administrador">Administrador</string>
+    <string name="borrar">Borrar Colaborador</string>
     <string name="colaborador">Colaborador</string>
     <string name="recargas">Recargas</string>
     <string name="ganancias">Ganancias</string>

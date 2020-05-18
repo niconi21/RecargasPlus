@@ -14,4 +14,9 @@
         android:name="com.example.recargaplus.ui.Recargas.ui.Recargad"
         android:label="recargad_fragment"
         tools:layout="@layout/recargad_fragment" />
+    <fragment
+        android:id="@+id/borrar_colaoboradorf"
+        android:name="com.example.recargaplus.ui.Borrar_colaoborador.Borrar_colaoboradorf"
+        android:label="borrar_colaoboradorf_fragment"
+        tools:layout="@layout/borrar_colaoboradorf_fragment" />
 </navigation>

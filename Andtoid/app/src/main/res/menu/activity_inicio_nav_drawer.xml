@@ -9,9 +9,9 @@
             android:icon="@drawable/ic_phone_android_black_24dp"
             android:title="@string/recargas" />
         <item
-            android:id="@+id/gananciasf"
-            android:icon="@drawable/ic_attach_money_black_24dp"
-            android:title="@string/ganancias" />
+            android:id="@+id/borrar_colaoboradorf"
+            android:icon="@drawable/ic_warning_black_24dp"
+            android:title="@string/borrar" />
 
     </group>
 
