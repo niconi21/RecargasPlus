@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/webServiceRecargasPlus" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/webServiceRecargasPlus" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/webServiceRecargasPlus">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:element name="login">
         <s:complexType>
           <s:sequence>
@@ -89,7 +89,7 @@
       <s:element name="setBonificacion">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="bonificacion" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="bonificacion" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="idMonto" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="idCompania" type="s:int" />
           </s:sequence>
@@ -110,7 +110,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="apemat" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="saldo" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="saldo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -138,7 +138,7 @@
       <s:element name="setMonto">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="monto" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -193,7 +193,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="apemat" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="saldo" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="saldo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -351,7 +351,7 @@
   <wsdl:binding name="ConsultasSoap" type="tns:ConsultasSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="login">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/login" style="document" />
+      <soap:operation soapAction="http://tempuri.org/login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -360,7 +360,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getBonificaciones">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificaciones" style="document" />
+      <soap:operation soapAction="http://tempuri.org/getBonificaciones" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -369,7 +369,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getBonificacion">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificacion" style="document" />
+      <soap:operation soapAction="http://tempuri.org/getBonificacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -378,7 +378,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getColaboradores">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getColaboradores" style="document" />
+      <soap:operation soapAction="http://tempuri.org/getColaboradores" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -387,7 +387,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getCompanias">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getCompanias" style="document" />
+      <soap:operation soapAction="http://tempuri.org/getCompanias" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -396,7 +396,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getMontos">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getMontos" style="document" />
+      <soap:operation soapAction="http://tempuri.org/getMontos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -405,7 +405,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getRecargas">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getRecargas" style="document" />
+      <soap:operation soapAction="http://tempuri.org/getRecargas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -414,7 +414,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setBonificacion">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setBonificacion" style="document" />
+      <soap:operation soapAction="http://tempuri.org/setBonificacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -423,7 +423,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setColaborador">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setColaborador" style="document" />
+      <soap:operation soapAction="http://tempuri.org/setColaborador" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -432,7 +432,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setCompania">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setCompania" style="document" />
+      <soap:operation soapAction="http://tempuri.org/setCompania" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -441,7 +441,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setMonto">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setMonto" style="document" />
+      <soap:operation soapAction="http://tempuri.org/setMonto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -450,7 +450,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setRecarga">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setRecarga" style="document" />
+      <soap:operation soapAction="http://tempuri.org/setRecarga" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -459,7 +459,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="updateBonificacion">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/updateBonificacion" style="document" />
+      <soap:operation soapAction="http://tempuri.org/updateBonificacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -468,7 +468,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="updateColaborador">
-      <soap:operation soapAction="http://tempuri.org/webServiceRecargasPlus/updateColaborador" style="document" />
+      <soap:operation soapAction="http://tempuri.org/updateColaborador" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -480,7 +480,7 @@
   <wsdl:binding name="ConsultasSoap12" type="tns:ConsultasSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="login">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/login" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -489,7 +489,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getBonificaciones">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificaciones" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/getBonificaciones" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -498,7 +498,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getBonificacion">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getBonificacion" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/getBonificacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -507,7 +507,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getColaboradores">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getColaboradores" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/getColaboradores" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -516,7 +516,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getCompanias">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getCompanias" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/getCompanias" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -525,7 +525,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getMontos">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getMontos" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/getMontos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -534,7 +534,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="getRecargas">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/getRecargas" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/getRecargas" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -543,7 +543,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setBonificacion">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setBonificacion" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/setBonificacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -552,7 +552,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setColaborador">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setColaborador" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/setColaborador" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -561,7 +561,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setCompania">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setCompania" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/setCompania" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -570,7 +570,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setMonto">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setMonto" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/setMonto" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -579,7 +579,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="setRecarga">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/setRecarga" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/setRecarga" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -588,7 +588,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="updateBonificacion">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/updateBonificacion" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/updateBonificacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -597,7 +597,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="updateColaborador">
-      <soap12:operation soapAction="http://tempuri.org/webServiceRecargasPlus/updateColaborador" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/updateColaborador" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

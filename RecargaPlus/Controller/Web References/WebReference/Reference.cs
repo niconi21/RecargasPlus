@@ -26,7 +26,7 @@ namespace Controller.WebReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="ConsultasSoap", Namespace="http://tempuri.org/webServiceRecargasPlus")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="ConsultasSoap", Namespace="http://tempuri.org/")]
     public partial class Consultas : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback loginOperationCompleted;
@@ -138,7 +138,7 @@ namespace Controller.WebReference {
         public event updateColaboradorCompletedEventHandler updateColaboradorCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/login", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/login", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string login(string usuario, string clave) {
             object[] results = this.Invoke("login", new object[] {
                         usuario,
@@ -169,7 +169,7 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/getBonificaciones", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getBonificaciones", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string getBonificaciones() {
             object[] results = this.Invoke("getBonificaciones", new object[0]);
             return ((string)(results[0]));
@@ -196,7 +196,7 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/getBonificacion", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getBonificacion", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string getBonificacion(int idCompania, int idMonto) {
             object[] results = this.Invoke("getBonificacion", new object[] {
                         idCompania,
@@ -227,7 +227,7 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/getColaboradores", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getColaboradores", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string getColaboradores() {
             object[] results = this.Invoke("getColaboradores", new object[0]);
             return ((string)(results[0]));
@@ -254,7 +254,7 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/getCompanias", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getCompanias", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string getCompanias() {
             object[] results = this.Invoke("getCompanias", new object[0]);
             return ((string)(results[0]));
@@ -281,7 +281,7 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/getMontos", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getMontos", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string getMontos() {
             object[] results = this.Invoke("getMontos", new object[0]);
             return ((string)(results[0]));
@@ -308,7 +308,7 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/getRecargas", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getRecargas", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string getRecargas(int idPersona) {
             object[] results = this.Invoke("getRecargas", new object[] {
                         idPersona});
@@ -337,8 +337,8 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/setBonificacion", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool setBonificacion(double bonificacion, int idMonto, int idCompania) {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/setBonificacion", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool setBonificacion(string bonificacion, int idMonto, int idCompania) {
             object[] results = this.Invoke("setBonificacion", new object[] {
                         bonificacion,
                         idMonto,
@@ -347,12 +347,12 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        public void setBonificacionAsync(double bonificacion, int idMonto, int idCompania) {
+        public void setBonificacionAsync(string bonificacion, int idMonto, int idCompania) {
             this.setBonificacionAsync(bonificacion, idMonto, idCompania, null);
         }
         
         /// <remarks/>
-        public void setBonificacionAsync(double bonificacion, int idMonto, int idCompania, object userState) {
+        public void setBonificacionAsync(string bonificacion, int idMonto, int idCompania, object userState) {
             if ((this.setBonificacionOperationCompleted == null)) {
                 this.setBonificacionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetBonificacionOperationCompleted);
             }
@@ -370,8 +370,8 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/setColaborador", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool setColaborador(string nombre, string apepat, string apemat, string usuario, string clave, double saldo) {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/setColaborador", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool setColaborador(string nombre, string apepat, string apemat, string usuario, string clave, string saldo) {
             object[] results = this.Invoke("setColaborador", new object[] {
                         nombre,
                         apepat,
@@ -383,12 +383,12 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        public void setColaboradorAsync(string nombre, string apepat, string apemat, string usuario, string clave, double saldo) {
+        public void setColaboradorAsync(string nombre, string apepat, string apemat, string usuario, string clave, string saldo) {
             this.setColaboradorAsync(nombre, apepat, apemat, usuario, clave, saldo, null);
         }
         
         /// <remarks/>
-        public void setColaboradorAsync(string nombre, string apepat, string apemat, string usuario, string clave, double saldo, object userState) {
+        public void setColaboradorAsync(string nombre, string apepat, string apemat, string usuario, string clave, string saldo, object userState) {
             if ((this.setColaboradorOperationCompleted == null)) {
                 this.setColaboradorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetColaboradorOperationCompleted);
             }
@@ -409,7 +409,7 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/setCompania", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/setCompania", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool setCompania(string compania) {
             object[] results = this.Invoke("setCompania", new object[] {
                         compania});
@@ -438,20 +438,20 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/setMonto", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool setMonto(double monto) {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/setMonto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool setMonto(string monto) {
             object[] results = this.Invoke("setMonto", new object[] {
                         monto});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void setMontoAsync(double monto) {
+        public void setMontoAsync(string monto) {
             this.setMontoAsync(monto, null);
         }
         
         /// <remarks/>
-        public void setMontoAsync(double monto, object userState) {
+        public void setMontoAsync(string monto, object userState) {
             if ((this.setMontoOperationCompleted == null)) {
                 this.setMontoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsetMontoOperationCompleted);
             }
@@ -467,7 +467,7 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/setRecarga", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/setRecarga", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool setRecarga(string numero, int idPersona, int idBonificacion, int idMonto, int idCompania) {
             object[] results = this.Invoke("setRecarga", new object[] {
                         numero,
@@ -504,7 +504,7 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/updateBonificacion", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/updateBonificacion", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool updateBonificacion(int idBonificacion, double bonificacion, int idMonto, int idCompania) {
             object[] results = this.Invoke("updateBonificacion", new object[] {
                         idBonificacion,
@@ -539,8 +539,8 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/webServiceRecargasPlus/updateColaborador", RequestNamespace="http://tempuri.org/webServiceRecargasPlus", ResponseNamespace="http://tempuri.org/webServiceRecargasPlus", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool updateColaborador(int idPersona, string nombre, string apepat, string apemat, string usuario, string clave, double saldo) {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/updateColaborador", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool updateColaborador(int idPersona, string nombre, string apepat, string apemat, string usuario, string clave, string saldo) {
             object[] results = this.Invoke("updateColaborador", new object[] {
                         idPersona,
                         nombre,
@@ -553,12 +553,12 @@ namespace Controller.WebReference {
         }
         
         /// <remarks/>
-        public void updateColaboradorAsync(int idPersona, string nombre, string apepat, string apemat, string usuario, string clave, double saldo) {
+        public void updateColaboradorAsync(int idPersona, string nombre, string apepat, string apemat, string usuario, string clave, string saldo) {
             this.updateColaboradorAsync(idPersona, nombre, apepat, apemat, usuario, clave, saldo, null);
         }
         
         /// <remarks/>
-        public void updateColaboradorAsync(int idPersona, string nombre, string apepat, string apemat, string usuario, string clave, double saldo, object userState) {
+        public void updateColaboradorAsync(int idPersona, string nombre, string apepat, string apemat, string usuario, string clave, string saldo, object userState) {
             if ((this.updateColaboradorOperationCompleted == null)) {
                 this.updateColaboradorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnupdateColaboradorOperationCompleted);
             }

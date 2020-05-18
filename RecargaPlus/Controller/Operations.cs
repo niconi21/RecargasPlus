@@ -207,13 +207,13 @@ namespace Controller
         public bool setBonificacion(double bonificacion, int idMonto, int idCompania)
         {
             _consulta = new Consultas();
-            bool respuesta = _consulta.setBonificacion(bonificacion, idMonto, idCompania);
+            bool respuesta = _consulta.setBonificacion(bonificacion.ToString(), idMonto, idCompania);
             return respuesta;
         }
         public bool setColaborador(String nombre, String apepat, String apemat, String usuario, String clave, double saldo)
         {
             _consulta = new Consultas();
-            bool respuesta = _consulta.setColaborador(nombre, apepat, apemat, usuario, clave, saldo);
+            bool respuesta = _consulta.setColaborador(nombre, apepat, apemat, usuario, clave, saldo.ToString());
             return respuesta;
         }
         public bool setCompania(String compania)
@@ -231,7 +231,7 @@ namespace Controller
         public bool setMonto(double monto)
         {
             _consulta = new Consultas();
-            bool respuesta = _consulta.setMonto(monto);
+            bool respuesta = _consulta.setMonto(monto.ToString());
             return respuesta;
         }
         public bool updateBonificacion(int idBonificacion, double bonificacion, int idMonto, int idCompania)
@@ -243,7 +243,7 @@ namespace Controller
         public bool updateColaborador(int idColaborador, String nombre, String apepat, String apemat, String usuario, String clave, double saldo)
         {
             _consulta = new Consultas();
-            var respuesta = _consulta.updateColaborador(idColaborador, nombre, apepat, apemat, usuario, clave, saldo);
+            var respuesta = _consulta.updateColaborador(idColaborador, nombre, apepat, apemat, usuario, clave, saldo.ToString());
             return respuesta;
         }
     }

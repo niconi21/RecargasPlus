@@ -283,7 +283,7 @@ namespace WebServicesRecargaPlus
             }
         }
         [WebMethod]
-        public bool setBonificacion(double bonificacion, int idMonto, int idCompania)
+        public bool setBonificacion(String bonificacion, int idMonto, int idCompania)
         {
             using (var connection = new SqlConnection(_stringConexion))
             {
@@ -292,7 +292,7 @@ namespace WebServicesRecargaPlus
                 {
                     command.Connection = connection;
                     command.CommandText = "INSERT INTO Bonificacion VALUES (@bonificacion, @monto, @compania)";
-                    command.Parameters.AddWithValue("@bonificacion", bonificacion);
+                    command.Parameters.AddWithValue("@bonificacion", double.Parse(bonificacion));
                     command.Parameters.AddWithValue("@monto", idMonto);
                     command.Parameters.AddWithValue("@compania", idCompania);
                     command.CommandType = CommandType.Text;
@@ -301,7 +301,7 @@ namespace WebServicesRecargaPlus
             }
         }
         [WebMethod]
-        public bool setColaborador(String nombre, String apepat, String apemat, String usuario, String clave, double saldo)
+        public bool setColaborador(String nombre, String apepat, String apemat, String usuario, String clave, String saldo)
         {
             using (var connection = new SqlConnection(_stringConexion))
             {
@@ -341,7 +341,7 @@ namespace WebServicesRecargaPlus
                     {
                         command.Connection = connection;
                         command.CommandText = "INSERT INTO Colaborador VALUES (@saldo, @persona)";
-                        command.Parameters.AddWithValue("@saldo", saldo);
+                        command.Parameters.AddWithValue("@saldo", double.Parse(saldo));
                         command.Parameters.AddWithValue("@persona", id);
                         command.CommandType = CommandType.Text;
                         insert = command.ExecuteNonQuery() > 0;
@@ -371,7 +371,7 @@ namespace WebServicesRecargaPlus
             }
         }
         [WebMethod]
-        public bool setMonto(double monto)
+        public bool setMonto(String monto)
         {
             using (var connection = new SqlConnection(_stringConexion))
             {
@@ -380,7 +380,7 @@ namespace WebServicesRecargaPlus
                 {
                     command.Connection = connection;
                     command.CommandText = "INSERT INTO Monto VALUES (@monto)";
-                    command.Parameters.AddWithValue("@monto", monto);
+                    command.Parameters.AddWithValue("@monto", double.Parse(monto));
                     command.CommandType = CommandType.Text;
                     var row = command.ExecuteNonQuery();
                     if (row > 0)
