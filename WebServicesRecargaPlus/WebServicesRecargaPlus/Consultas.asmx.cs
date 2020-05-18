@@ -484,6 +484,15 @@ namespace WebServicesRecargaPlus
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
+                    command.CommandText = "DELETE FROM Recarga WHERE persona = @persona";
+                    command.Parameters.AddWithValue("@persona", idPersona);
+                    command.CommandType = CommandType.Text;
+                    delete = command.ExecuteNonQuery() > 0;
+
+                }
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
                     command.CommandText = "DELETE FROM Persona WHERE id = @persona";
                     command.Parameters.AddWithValue("@persona", idPersona);
                     command.Parameters.AddWithValue("@id", idPersona);
