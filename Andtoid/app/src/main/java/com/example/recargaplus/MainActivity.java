@@ -24,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
     EditText etUsuario, etClave;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Usuario_cache.nombre = "";
+        Usuario_cache.apepat = "";
+        Usuario_cache.apemat = "";
+        Usuario_cache.clave = "";
+        Usuario_cache.usuario = "";
+        Usuario_cache.idPersona = -1;
+        Usuario_cache.tipo = -1;
+        Usuario_cache.saldo = 0.0f;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ingresar = findViewById(R.id.btn_ingresar);
@@ -47,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     Usuario_cache.tipo = Byte.parseByte(datos[6]) == 0 ? R.string.administrador : R.string.colaborador;
                     if (Usuario_cache.tipo == R.string.colaborador)
                         Usuario_cache.saldo = Double.parseDouble(datos[7]);
+                    else
+                        Usuario_cache.saldo = 0.0;
                     Intent i = new Intent(getApplicationContext(), InicioNav.class);
                     startActivity(i);
                 }

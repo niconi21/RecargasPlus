@@ -432,9 +432,8 @@ namespace WebServicesRecargaPlus
             }
         }
         [WebMethod]
-        public bool updateColaborador(int idPersona,String nombre, String apepat, String apemat, String usuario, String clave, String saldo)
+        public bool updateColaborador(int idPersona, String nombre, String apepat, String apemat, String usuario, String clave, String saldo)
         {
-            double saldo1 = double.Parse(saldo);
             using (var connection = new SqlConnection(_stringConexion))
             {
                 connection.Open();
@@ -457,13 +456,42 @@ namespace WebServicesRecargaPlus
                 {
                     command.Connection = connection;
                     command.CommandText = "UPDATE Colaborador SET saldo = @saldo WHERE persona = @id";
-                    command.Parameters.AddWithValue("@saldo", saldo1);
+                    command.Parameters.AddWithValue("@saldo", double.Parse(saldo));
                     command.Parameters.AddWithValue("@id", idPersona);
                     command.CommandType = CommandType.Text;
                     update = command.ExecuteNonQuery() > 0;
 
                 }
                 return update;
+            }
+        }
+        [WebMethod]
+        public bool deleteColaborador(int idPersona)
+        {
+            using (var connection = new SqlConnection(_stringConexion))
+            {
+                connection.Open();
+                bool delete = false;
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE FROM Colaborador WHERE persona = @persona";
+                    command.Parameters.AddWithValue("@persona", idPersona);
+                    command.CommandType = CommandType.Text;
+                    delete = command.ExecuteNonQuery() > 0;
+
+                }
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE FROM Persona WHERE id = @persona";
+                    command.Parameters.AddWithValue("@persona", idPersona);
+                    command.Parameters.AddWithValue("@id", idPersona);
+                    command.CommandType = CommandType.Text;
+                    delete = command.ExecuteNonQuery() > 0;
+
+                }
+                return delete;
             }
         }
     }

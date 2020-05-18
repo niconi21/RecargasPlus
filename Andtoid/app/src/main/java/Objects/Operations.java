@@ -574,8 +574,32 @@ public class Operations extends AsyncTask<Object, Void, String> {
             this.respuesta = this.execute().get();
             if (!respuesta.equals("anyType{}")) {
                 res = Boolean.parseBoolean(respuesta.toString());
-                System.out.println( res ? "Se ha actualizado" : "No se ha actualizado");
-                System.out.println("////////////" + respuesta);
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+    public boolean deleteColaborador(int idPersona){
+        this.metodo = "deleteColaborador";
+        this.soap_action += this.metodo;
+        this.propiedades = new ArrayList<PropertyInfo>();
+
+        PropertyInfo pidColaborador = new PropertyInfo();
+        pidColaborador.setName("idPersona");
+        pidColaborador.setValue(idPersona);
+        pidColaborador.setType(Integer.class);
+
+        propiedades.add(pidColaborador);
+
+        boolean res = false;
+        try {
+            this.respuesta = this.execute().get();
+            if (!respuesta.equals("anyType{}")) {
+                res = Boolean.parseBoolean(respuesta.toString());
             }
         } catch (ExecutionException e) {
             e.printStackTrace();
