@@ -6,6 +6,11 @@
     <string name="erron_login_incorrecto">Error: Usuario y/o clave incorrectos</string>
     <string name="administrador">Administrador</string>
     <string name="colaborador">Colaborador</string>
+    <string name="recargas">Recargas</string>
+    <string name="ganancias">Ganancias</string>
+    <string name="numero">Número</string>
+
+
     <string name="title_activity_inicio">Inicio</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -23,4 +28,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_inicio_nav">InicioNav</string>
 </resources>
