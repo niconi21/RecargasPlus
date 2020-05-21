@@ -109,7 +109,7 @@
             // 
             this.txt_clave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_clave.Font = new System.Drawing.Font("Perpetua Titling MT", 10F, System.Drawing.FontStyle.Bold);
-            this.txt_clave.Location = new System.Drawing.Point(348, 141);
+            this.txt_clave.Location = new System.Drawing.Point(349, 141);
             this.txt_clave.Name = "txt_clave";
             this.txt_clave.PasswordChar = '*';
             this.txt_clave.Size = new System.Drawing.Size(212, 17);

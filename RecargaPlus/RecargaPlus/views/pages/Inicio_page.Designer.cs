@@ -49,13 +49,13 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_cargo = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_nombre = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_contenedor = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbl_nombre = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbl_cargo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -318,6 +318,50 @@
             this.panel2.Size = new System.Drawing.Size(285, 100);
             this.panel2.TabIndex = 0;
             // 
+            // lbl_cargo
+            // 
+            this.lbl_cargo.AutoSize = true;
+            this.lbl_cargo.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_cargo.ForeColor = System.Drawing.Color.White;
+            this.lbl_cargo.Location = new System.Drawing.Point(72, 75);
+            this.lbl_cargo.Name = "lbl_cargo";
+            this.lbl_cargo.Size = new System.Drawing.Size(81, 13);
+            this.lbl_cargo.TabIndex = 6;
+            this.lbl_cargo.Text = "Bienvenido";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(72, 62);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Cargo:";
+            // 
+            // lbl_nombre
+            // 
+            this.lbl_nombre.AutoSize = true;
+            this.lbl_nombre.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_nombre.ForeColor = System.Drawing.Color.White;
+            this.lbl_nombre.Location = new System.Drawing.Point(71, 49);
+            this.lbl_nombre.Name = "lbl_nombre";
+            this.lbl_nombre.Size = new System.Drawing.Size(81, 13);
+            this.lbl_nombre.TabIndex = 4;
+            this.lbl_nombre.Text = "Bienvenido";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(71, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Bienvenido";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -346,50 +390,6 @@
             this.panel_contenedor.Name = "panel_contenedor";
             this.panel_contenedor.Size = new System.Drawing.Size(646, 497);
             this.panel_contenedor.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(71, 36);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Bienvenido";
-            // 
-            // lbl_nombre
-            // 
-            this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_nombre.ForeColor = System.Drawing.Color.White;
-            this.lbl_nombre.Location = new System.Drawing.Point(71, 49);
-            this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(81, 13);
-            this.lbl_nombre.TabIndex = 4;
-            this.lbl_nombre.Text = "Bienvenido";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(72, 62);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Cargo:";
-            // 
-            // lbl_cargo
-            // 
-            this.lbl_cargo.AutoSize = true;
-            this.lbl_cargo.Font = new System.Drawing.Font("Perpetua Titling MT", 8F, System.Drawing.FontStyle.Bold);
-            this.lbl_cargo.ForeColor = System.Drawing.Color.White;
-            this.lbl_cargo.Location = new System.Drawing.Point(72, 75);
-            this.lbl_cargo.Name = "lbl_cargo";
-            this.lbl_cargo.Size = new System.Drawing.Size(81, 13);
-            this.lbl_cargo.TabIndex = 6;
-            this.lbl_cargo.Text = "Bienvenido";
             // 
             // Inicio_page
             // 

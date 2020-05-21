@@ -692,10 +692,10 @@
   </wsdl:binding>
   <wsdl:service name="Consultas">
     <wsdl:port name="ConsultasSoap" binding="tns:ConsultasSoap">
-      <soap:address location="http://192.168.1.72/webServicesRecargaPlus/Consultas.asmx" />
+      <soap:address location="http://192.168.1.91/webServicesRecargaPlus/Consultas.asmx" />
     </wsdl:port>
     <wsdl:port name="ConsultasSoap12" binding="tns:ConsultasSoap12">
-      <soap12:address location="http://192.168.1.72/webServicesRecargaPlus/Consultas.asmx" />
+      <soap12:address location="http://192.168.1.91/webServicesRecargaPlus/Consultas.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

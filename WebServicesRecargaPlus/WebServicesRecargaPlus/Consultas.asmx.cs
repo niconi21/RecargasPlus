@@ -19,7 +19,9 @@ namespace WebServicesRecargaPlus
     // [System.Web.Script.Services.ScriptService]
     public class Consultas : System.Web.Services.WebService
     {
-        private String _stringConexion = "server=192.168.1.72; database=RecargaPlus ; user id=TAP ; pwd=12345";
+        
+
+        private String _stringConexion = "server=192.168.1.91; database=RecargaPlus ; user id=TAP ; pwd=12345";
 
         [WebMethod]
         public String login(String usuario, String clave)

@@ -1,6 +1,7 @@
 package Objects;
 
 public class Colaborador {
+
     private int idPersona;
     private int idColaborador;
     private String nombre;

@@ -20,10 +20,12 @@ import Objects.Operations;
 import Objects.Usuario_cache;
 
 public class MainActivity extends AppCompatActivity {
+    //Declaramos los componentes
     Button ingresar;
     EditText etUsuario, etClave;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Datos del usuario por defecto
         Usuario_cache.nombre = "";
         Usuario_cache.apepat = "";
         Usuario_cache.apemat = "";
@@ -32,19 +34,28 @@ public class MainActivity extends AppCompatActivity {
         Usuario_cache.idPersona = -1;
         Usuario_cache.tipo = -1;
         Usuario_cache.saldo = 0.0f;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //asinar el valor a los componentes
         ingresar = findViewById(R.id.btn_ingresar);
         etUsuario = findViewById(R.id.atUsuario);
         etClave = findViewById(R.id.etClave);
+
+
         ingresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Instancia de nuestras operacoines
                 Operations login = new Operations();
+                //mandamos los datos al web service
                 String respuesta = login.login(etUsuario.getText().toString(), etClave.getText().toString());
+
+                //validamos si la respuesta está vacia
                 if (respuesta.toString().equals("anyType{}")) {
                     Toast.makeText(getApplicationContext(), R.string.erron_login_incorrecto, Toast.LENGTH_LONG).show();
-                } else {
+                } else {//Si ña respuesta no está vacia
                     String[] datos = respuesta.split(",");
                     Usuario_cache.idPersona = Integer.parseInt(datos[0]);
                     Usuario_cache.nombre = datos[1];

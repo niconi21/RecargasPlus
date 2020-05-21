@@ -72,8 +72,12 @@ namespace RecargaPlus.src.views.frame
 
         private void tabla_bonificaciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            _index = e.RowIndex;
-            txt_bonificacion.Text = _bonificaciones.ElementAt(_index).bonificacion.ToString();
+            try
+            {
+                _index = e.RowIndex;
+                txt_bonificacion.Text = _bonificaciones.ElementAt(_index).bonificacion.ToString();
+            }
+            catch { }
         }
 
         private void btn_actualizar_Click(object sender, EventArgs e)

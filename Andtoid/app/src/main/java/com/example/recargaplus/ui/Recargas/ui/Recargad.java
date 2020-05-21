@@ -46,6 +46,8 @@ public class Recargad extends Fragment {
         View vista = inflater.inflate(R.layout.recargad_fragment, container, false);
         tV_Saldo = vista.findViewById(R.id.tvSaldo);
         tV_Saldo.setText("Saldo: $" + Usuario_cache.saldo);
+
+        //Lista de los montos
         final ArrayList<Monto> montos = (new Operations()).getMontos();
         ArrayList<String> cantidades = new ArrayList<String>();
         for (Monto monto : montos) {
@@ -54,6 +56,7 @@ public class Recargad extends Fragment {
         ArrayAdapter<String> adapterMonto = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_spinner_item, cantidades);
 
+        //lista las companias
         final ArrayList<Compania> companias = (new Operations()).getCompanias();
         ArrayList<String> nombresCompanias = new ArrayList<String>();
         for (Compania compania : companias) {
@@ -62,12 +65,16 @@ public class Recargad extends Fragment {
         ArrayAdapter<String> adapterCompanias = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_spinner_item, nombresCompanias);
 
+
+        //Enlazamos la variables con la vista
         sCompanias = vista.findViewById(R.id.spinner_companias);
         sCompanias.setAdapter(adapterCompanias);
         sMontos = vista.findViewById(R.id.spinner_montos);
         sMontos.setAdapter(adapterMonto);
         btnRecarga = vista.findViewById(R.id.btn_recarga);
         edNumero = vista.findViewById(R.id.ed_numero);
+
+        //Evento del boton
         btnRecarga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

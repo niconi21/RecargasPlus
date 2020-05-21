@@ -80,10 +80,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://192.168.1.72/webServicesRecargaPlus/Consultas.asmx">
+    <WebReferenceUrl Include="http://192.168.1.91/webServicesRecargaPlus/Consultas.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WebReference\</RelPath>
-      <UpdateFromURL>http://192.168.1.72/webServicesRecargaPlus/Consultas.asmx</UpdateFromURL>
+      <UpdateFromURL>http://192.168.1.91/webServicesRecargaPlus/Consultas.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

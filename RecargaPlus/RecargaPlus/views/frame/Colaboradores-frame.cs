@@ -57,13 +57,17 @@ namespace RecargaPlus.src.views.frame
         }
         private void tabla_colaboradores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            _index = e.RowIndex;
-            txt_nombre.Text = _colaboradores.ElementAt(_index).Nombre;
-            txt_apepat.Text = _colaboradores.ElementAt(_index).Apepat;
-            txt_apemat.Text = _colaboradores.ElementAt(_index).Apemat;
-            txt_usuario.Text = _colaboradores.ElementAt(_index).Usuario;
-            txt_clave.Text = _colaboradores.ElementAt(_index).Clave;
-            txt_saldo.Text = _colaboradores.ElementAt(_index).Saldo.ToString();
+            try
+            {
+                _index = e.RowIndex;
+                txt_nombre.Text = _colaboradores.ElementAt(_index).Nombre;
+                txt_apepat.Text = _colaboradores.ElementAt(_index).Apepat;
+                txt_apemat.Text = _colaboradores.ElementAt(_index).Apemat;
+                txt_usuario.Text = _colaboradores.ElementAt(_index).Usuario;
+                txt_clave.Text = _colaboradores.ElementAt(_index).Clave;
+                txt_saldo.Text = _colaboradores.ElementAt(_index).Saldo.ToString();
+            }
+            catch { }
             
         }
 

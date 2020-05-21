@@ -77,10 +77,14 @@ INSERT INTO Administrador VALUES(0);
 	Persona por defecto como Colaboradores
 */
 INSERT INTO Persona VALUES ('Francisco Enrique', 'Alberto', 'Cordova', 'francisco', 'francisco', 1);
-INSERT INTO Persona VALUES ('Josue Jared', 'Camacho', 'Rolon', 'josue', 'josue', 1);
+INSERT INTO Persona VALUES ('Jared Josue ', 'Camacho', 'Rolon', 'josue', 'josue', 1);
 /*
 	Administrador por defecto
 */
 INSERT INTO Colaborador VALUES(1000, 1);
-INSERT INTO Colaborador VALUES(1000, 2);
+INSERT INTO Colaborador VALUES(1000, 26);
 
+SELECT * FROM Persona;
+SELECT * FROM Colaborador INNER JOIN Persona on Colaborador.persona = Persona.id;
+
+SELECT * FROM Recarga INNER JOIN Persona on Recarga.persona = Persona.id;
