@@ -68,7 +68,7 @@ INSERT INTO Monto VALUES (1000);
 /*
 	Persona por defecto como administrador
 */
-INSERT INTO Persona VALUES ('Nicolas', 'Moreno', 'Dur·n', 'niconi', 'niconi', 0);
+INSERT INTO Persona VALUES ('Nicolas', 'Moreno', 'Dur√°n', 'niconi', 'niconi', 0);
 /*
 	Administrador por defecto
 */
@@ -79,8 +79,67 @@ INSERT INTO Administrador VALUES(0);
 INSERT INTO Persona VALUES ('Francisco Enrique', 'Alberto', 'Cordova', 'francisco', 'francisco', 1);
 INSERT INTO Persona VALUES ('Josue Jared', 'Camacho', 'Rolon', 'josue', 'josue', 1);
 /*
-	Administrador por defecto
+	Colaborador por defecto
 */
 INSERT INTO Colaborador VALUES(1000, 1);
 INSERT INTO Colaborador VALUES(1000, 2);
 
+/*
+	Bonificaciones
+*/
+
+INSERT INTO Bonificacion VALUES (1,0,0);
+INSERT INTO Bonificacion VALUES (1,0,1);
+INSERT INTO Bonificacion VALUES (1,0,2);
+INSERT INTO Bonificacion VALUES (1,0,3);
+
+INSERT INTO Bonificacion VALUES (2,1,0);
+INSERT INTO Bonificacion VALUES (2,1,1);
+INSERT INTO Bonificacion VALUES (2,1,2);
+INSERT INTO Bonificacion VALUES (2,1,3);
+
+INSERT INTO Bonificacion VALUES (3,2,0);
+INSERT INTO Bonificacion VALUES (3,2,1);
+INSERT INTO Bonificacion VALUES (3,2,2);
+INSERT INTO Bonificacion VALUES (3,2,3);
+
+INSERT INTO Bonificacion VALUES (4,3,0);
+INSERT INTO Bonificacion VALUES (4,3,1);
+INSERT INTO Bonificacion VALUES (4,3,2);
+INSERT INTO Bonificacion VALUES (4,3,3);
+
+INSERT INTO Bonificacion VALUES (5,4,0);
+INSERT INTO Bonificacion VALUES (5,4,1);
+INSERT INTO Bonificacion VALUES (5,4,2);
+INSERT INTO Bonificacion VALUES (5,4,3);
+
+INSERT INTO Bonificacion VALUES (6,5,0);
+INSERT INTO Bonificacion VALUES (6,5,1);
+INSERT INTO Bonificacion VALUES (6,5,2);
+INSERT INTO Bonificacion VALUES (6,5,3);
+
+INSERT INTO Bonificacion VALUES (7,6,0);
+INSERT INTO Bonificacion VALUES (7,6,1);
+INSERT INTO Bonificacion VALUES (7,6,2);
+INSERT INTO Bonificacion VALUES (7,6,3);
+
+INSERT INTO Bonificacion VALUES (8,7,0);
+INSERT INTO Bonificacion VALUES (8,7,1);
+INSERT INTO Bonificacion VALUES (8,7,2);
+INSERT INTO Bonificacion VALUES (8,7,3);
+
+INSERT INTO Bonificacion VALUES (9,6,0);
+INSERT INTO Bonificacion VALUES (9,6,1);
+INSERT INTO Bonificacion VALUES (9,6,2);
+INSERT INTO Bonificacion VALUES (9,6,3);
+
+INSERT INTO Bonificacion VALUES (10,9,0);
+INSERT INTO Bonificacion VALUES (10,9,1);
+INSERT INTO Bonificacion VALUES (10,9,2);
+INSERT INTO Bonificacion VALUES (10,9,3);
+
+CREATE TABLE Bonificacion(
+	id INT IDENTITY(0,1) PRIMARY KEY NOT NULL,
+	bonificacion SMALLMONEY NOT NULL,
+	monto INT NOT NULL CONSTRAINT fk_bonificacion_tiene_monto REFERENCES Monto,
+	compania INT NOT NULL CONSTRAINT fk_bonificacion_tiene_compania REFERENCES Compania);
