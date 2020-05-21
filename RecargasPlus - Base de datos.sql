@@ -138,8 +138,3 @@ INSERT INTO Bonificacion VALUES (10,9,1);
 INSERT INTO Bonificacion VALUES (10,9,2);
 INSERT INTO Bonificacion VALUES (10,9,3);
 
-CREATE TABLE Bonificacion(
-	id INT IDENTITY(0,1) PRIMARY KEY NOT NULL,
-	bonificacion SMALLMONEY NOT NULL,
-	monto INT NOT NULL CONSTRAINT fk_bonificacion_tiene_monto REFERENCES Monto,
-	compania INT NOT NULL CONSTRAINT fk_bonificacion_tiene_compania REFERENCES Compania);
